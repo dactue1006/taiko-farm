@@ -35,7 +35,7 @@ const delay = (ms) => new Promise((res) => setTimeout(res, ms));
 export async function runVote(userWallet) {
   let wallet = new ethers.Wallet(userWallet);
   console.log(`Start run vote for wallet ${wallet.address}`);
-  for (let i = 0; i < 100; i++) {
+  for (let i = 0; i < 130; i++) {
     console.log("vote ", i + 1);
     await vote(wallet);
     const delayInSeconds = Math.floor(Math.random() * (30 - 10 + 1)) + 10;
