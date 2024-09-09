@@ -5,3 +5,10 @@ Hướng dẫn chạy project:
 4. Chạy lệnh `yarn install`
 5. Copy file `.env.example` ra file mới là `.env` sau đó sửa lại là danh sách các private key, cách nhau bởi dấu phẩy `,`
 6. Cuối cùng thì chạy lệnh `yarn start`
+7. Update: Trường hợp muốn chạy lending meridian thì làm các bước sau:
+
+    a. Swap sẵn một lượng USDC.e (stargate)
+
+    b. chạy lệnh: ```yarn start:meridian```
+
+Note: hiện tại mạng taiko như cc nên có thể đổi rpc url trong file ```meridian/index.js``` từ chainlist.org
