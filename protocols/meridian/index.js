@@ -110,7 +110,7 @@ async function depositAndWithdraw(walletUnconnected) {
 }
 
 const delay = (ms) => {
-  console.log(`delay in ${ms / 1000}`);
+  console.log(`delay in ${ms / 1000}s`);
   return new Promise((res) => setTimeout(res, ms));
 };
 
