@@ -7,7 +7,8 @@
   "type": "module",
   "scripts": {
     "start": "node index.js",
-    "start:meridian": "node meridian.js"
+    "start:meridian": "node meridian.js",
+    "start:robotFarm": "node robotFarm.js"
   },
   "dependencies": {
     "dotenv": "^16.4.5",

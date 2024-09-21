@@ -26,21 +26,21 @@ async function depositAndWithdraw(walletUnconnected) {
     let signer = new ethers.Wallet(walletUnconnected, provider);
     const feeData = await provider.getFeeData();
 
-    // const txWithdraw1 = await lendingContract.connect(signer).withdraw(
-    //   USDCStargateAddress,
-    //   BigNumber.from(
-    //     "115792089237316195423570985008687907853269984665640564039457584007913129639935"
-    //   ), // infinity USDC
-    //   signer.address,
-    //   {
-    //     value: "0",
-    //     gasPrice: feeData.gasPrice.mul(105).div(100),
-    //   }
-    // );
-    // console.log("withdraw transaction:", txWithdraw1.hash);
-    // await txWithdraw1.wait();
-    // await delay(1000);
-    // return;
+    const txWithdraw1 = await lendingContract.connect(signer).withdraw(
+      USDCStargateAddress,
+      BigNumber.from(
+        "115792089237316195423570985008687907853269984665640564039457584007913129639935"
+      ), // infinity USDC
+      signer.address,
+      {
+        value: "0",
+        gasPrice: feeData.gasPrice.mul(105).div(100),
+      }
+    );
+    console.log("withdraw transaction:", txWithdraw1.hash);
+    await txWithdraw1.wait();
+    await delay(1000);
+    return;
     const USDCBalance = await USDCStargateContract.balanceOf(signer.address);
     console.log("USDC balance", USDCBalance.toNumber() / 1e6);
 
@@ -84,7 +84,7 @@ async function depositAndWithdraw(walletUnconnected) {
 
     console.log("deposit transaction:", txDeposit.hash);
     await txDeposit.wait();
-    await delay(300000); // 5 mins
+    await delay(60000); // 1 mins
 
     console.log("deposit completed successfully.");
 
