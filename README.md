@@ -12,3 +12,5 @@ Hướng dẫn chạy project:
     b. chạy lệnh: ```yarn start:meridian```
 
 Note: hiện tại mạng taiko như cc nên có thể đổi rpc url trong file ```meridian/index.js``` từ chainlist.org
+
+8. chaỵ robot farm: ```yarn start:robotFarm```
