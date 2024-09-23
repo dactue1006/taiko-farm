@@ -6,9 +6,10 @@
   "license": "MIT",
   "type": "module",
   "scripts": {
-    "start": "node index.js",
-    "start:meridian": "node meridian.js",
-    "start:robotFarm": "node robotFarm.js"
+    "start": "node scripts/rubyVote.js",
+    "start:meridian": "node scripts/meridian.js",
+    "start:robotFarm": "node scripts/robotFarm.js",
+    "start:wrapETH": "node scripts/wrapETH.js"
   },
   "dependencies": {
     "dotenv": "^16.4.5",
