@@ -8,12 +8,12 @@ import { delay } from "../../protocols/common.js";
 const CROSWAP_ADDRESS = "0xAaAaAAAA81a99d2a05eE428eC7a1d8A3C2237D85";
 
 // Hardcoded swap parameters
+const plumeValues = [1, 1.5, 2];
 const base = "0x0000000000000000000000000000000000000000";
 const quote = "0xdddD73F5Df1F0DC31373357beAC77545dC5A6f3F";
 const poolIdx = 420;
 const isBuy = true;
 const inBaseQty = true;
-const qty = ethers.BigNumber.from("10000000000000000"); // 0.01 ETH
 const tip = 0;
 const limitPrice = ethers.BigNumber.from(
   "21267430153580247136652501917186561137"
@@ -21,6 +21,10 @@ const limitPrice = ethers.BigNumber.from(
 const minOut = ethers.BigNumber.from("0");
 const reserveFlags = 0;
 
+const getRandomPlumeValue = () => {
+  const randomIndex = Math.floor(Math.random() * plumeValues.length);
+  return ethers.utils.parseEther(plumeValues[randomIndex].toString());
+};
 /**
  * Executes a hardcoded swap on Croswap.
  * @param {string} privateKey - The user's private key.
@@ -29,6 +33,8 @@ const reserveFlags = 0;
 export async function swap(privateKey, provider) {
   try {
     console.log("Start swap");
+    const qty = getRandomPlumeValue();
+
     const wallet = new ethers.Wallet(privateKey, provider);
     const croswap = new ethers.Contract(CROSWAP_ADDRESS, croswapABI, wallet);
 
@@ -48,7 +54,7 @@ export async function swap(privateKey, provider) {
       minOut,
       reserveFlags,
       {
-        value: ethers.BigNumber.from("10000000000000000"),
+        value: qty,
       }
     );
     await tx.wait();
