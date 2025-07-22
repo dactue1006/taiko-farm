@@ -33,3 +33,14 @@ Note: hiện tại mạng taiko như cc nên có thể đổi rpc url trong file
    a. Đối với dmail: `lisk/protocols/dmail.js` dòng 46
 
    b. Đối với wrap ETH: `lisk/protocols/wrapETH.js` dòng 90
+
+### PLUME FARM
+
+1. Làm từ bước 1 tới bước 5 giống như trên
+2. Chạy các lệnh sau để farm:
+
+   - Chạy farm wrap and unwrap eth(30 tx): `yarn plume:start:wrapETH`
+
+3. Có thể sửa số tx trong file này
+
+   - Đối với wrap ETH: `plume/protocols/runWrapETH.js` dòng 90

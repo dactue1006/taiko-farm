@@ -1,10 +1,10 @@
 import { ethers } from "ethers";
 
 const PROVIDERS = [
-  "https://taiko.blockpi.network/v1/rpc/public",
-  "https://rpc.ankr.com/taiko",
+  // "https://taiko.blockpi.network/v1/rpc/public",
+  // "https://rpc.ankr.com/taiko",
   "https://rpc.taiko.xyz",
-  "https://rpc.mainnet.taiko.xyz",
+  // "https://rpc.mainnet.taiko.xyz",
 ];
 
 export const getTaikoProvider = () => {
