@@ -12,7 +12,8 @@
     "start:wrapETH": "node scripts/wrapETH.js",
     "lisk:start:wrapETH": "node lisk/scripts/wrapETH.js",
     "lisk:start:sendMail": "node lisk/scripts/dmail.js",
-    "plume:start:wrapETH": "node plume/scripts/runWrapETH.js"
+    "plume:start:wrapETH": "node plume/scripts/runWrapETH.js",
+    "plume:start:ambient": "node plume/scripts/runAmbient.js"
   },
   "dependencies": {
     "@faker-js/faker": "^9.3.0",
